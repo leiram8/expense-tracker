@@ -1,0 +1,58 @@
+.expenseform {
+  margin: 1rem 0;
+  padding: 2rem;
+  display: flex;
+}
+
+.expenseform label {
+  font-weight: bold;
+  color: #464646;
+  margin-bottom: 0.5rem;
+}
+
+.expenseform input {
+  font: inherit;
+  padding: 0.3rem 0.3rem;
+  border-radius: 5px;
+  border: none;
+  background-color: rgba(104, 0, 104, 0.3);
+  color: white;
+  font-weight: bold;
+  width: 11.4rem;
+}
+
+.expenseform select {
+  font: inherit;
+  padding: 0.3rem 0.3rem;
+  border-radius: 5px;
+  border: none;
+  background-color: rgba(104, 0, 104, 0.3);
+  color: white;
+  font-weight: bold;
+  width: 12rem;
+}
+.expenseform option {
+  background-color: white;
+  color: #952C95;
+}
+
+.expenseform form {
+  margin: auto;
+  width: 80%;
+}
+
+.expenseform div {
+  margin-bottom: 1rem;
+  display: flex;
+  justify-content: space-between;
+}
+
+.expenseform button {
+  margin-top: 1rem;
+}
+
+.title {
+  margin: auto;
+  padding-bottom: 1rem;
+  color: #464646;
+}

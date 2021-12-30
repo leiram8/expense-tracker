@@ -1,0 +1,54 @@
+p {
+  padding: 2rem 2rem;
+}
+
+ul {
+  padding: 0.5rem 2rem;
+  margin: 0;
+}
+
+li {
+  list-style: none;
+  margin: 0.3rem;
+  padding: 0.3rem;
+  display: grid;
+  grid-template-columns: 3fr 1fr 1fr;
+}
+
+.item {
+  border-radius: 5px;
+  background-color: rgba(149, 44, 149, 0.3);
+  color: #464646;
+}
+
+.amount {
+  text-align: right;
+}
+
+.name {
+  text-align: left;
+}
+
+.date {
+  text-align: right;
+}
+
+.titles {
+  text-align: center;
+  font-weight: bold;
+  color: #464646;
+}
+
+.title {
+  margin: auto;
+  padding-top: 2rem;
+  color: #464646;
+}
+
+.expense {
+  color: red;
+}
+
+.income {
+  color: #006800;
+}
