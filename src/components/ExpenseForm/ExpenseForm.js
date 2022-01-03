@@ -4,13 +4,14 @@ import Card from "../UI/Card/Card";
 import styles from "./ExpenseForm.module.css";
 
 const ExpenseForm = (props) => {
+  const today = new Date().toJSON().slice(0, 10);
+
   const [name, setName] = useState("");
   const [category, setCategory] = useState("other");
   const [amount, setAmount] = useState("");
-  const [date, setDate] = useState();
+  const [date, setDate] = useState(today);
   const [type, setType] = useState("expense");
   const [errorMsj, setErrorMsj] = useState();
-  const [isValid, setIsValid] = useState(false);
 
   const nameHandler = (event) => {
     setName(event.target.value);
@@ -22,20 +23,19 @@ const ExpenseForm = (props) => {
 
   const amountHandler = (event) => {
     setAmount(event.target.value);
-    console.log(amount);
   };
 
   const dateHandler = (event) => {
     setDate(event.target.value);
-    console.log(date);
   };
 
   const typeHandler = (event) => {
     setType(event.target.value);
-    console.log(type);
   };
 
   const submitHandler = (event) => {
+    setErrorMsj();
+
     event.preventDefault();
     if (name.trim().length === 0) {
       setErrorMsj("Please enter a name.");
@@ -57,6 +57,12 @@ const ExpenseForm = (props) => {
       date: date,
       type: type,
     });
+
+    setName("");
+    setCategory("other");
+    setAmount("");
+    setDate(today);
+    setType("expense");
   };
 
   return (
@@ -67,11 +73,11 @@ const ExpenseForm = (props) => {
         </div>
         <div>
           <label>Name</label>
-          <input type="text" onChange={nameHandler} />
+          <input type="text" onChange={nameHandler} value={name} />
         </div>
         <div>
           <label>Category</label>
-          <select defaultValue={"other"} onChange={categoryHandler}>
+          <select value={category} onChange={categoryHandler}>
             <option value="food">Food</option>
             <option value="housing">Housing</option>
             <option value="transportation">Transportation</option>
@@ -84,20 +90,25 @@ const ExpenseForm = (props) => {
         </div>
         <div>
           <label>Amount</label>
-          <input type="number" min={1} onChange={amountHandler} />
+          <input
+            type="number"
+            min={1}
+            onChange={amountHandler}
+            value={amount}
+          />
         </div>
         <div>
           <label>Date</label>
-          <input type="date" onChange={dateHandler} />
+          <input type="date" onChange={dateHandler} value={date} />
         </div>
         <div>
           <label>Type</label>
-          <select defaultValue={"expense"} onChange={typeHandler}>
+          <select value={type} onChange={typeHandler}>
             <option value="expense">Expense</option>
             <option value="income">Income</option>
           </select>
         </div>
-        {errorMsj && <div>{errorMsj}</div>}
+        {errorMsj && <div className={styles.errormsj}>{errorMsj}</div>}
         <Button type="submit" className={styles.btn}>
           Submit
         </Button>

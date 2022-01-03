@@ -21,7 +21,7 @@ const App = () => {
       name: "Salary",
       category: "salary",
       amount: "20000",
-      date: "2021-11-9",
+      date: "2021-11-09",
       type: "income",
     },
   ]);

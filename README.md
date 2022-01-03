@@ -19,3 +19,4 @@ git clone https://github.com/leiram8/expense-tracker.git
 * Monthly view
 * Category filter
 * Delete item option
+* Data persistence

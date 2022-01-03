@@ -31,9 +31,10 @@
   font-weight: bold;
   width: 12rem;
 }
+
 .expenseform option {
   background-color: white;
-  color: #952C95;
+  color: #952c95;
 }
 
 .expenseform form {
@@ -55,4 +56,8 @@
   margin: auto;
   padding-bottom: 1rem;
   color: #464646;
+}
+
+.errormsj {
+  color: red;
 }
